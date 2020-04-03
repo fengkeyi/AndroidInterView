@@ -14,10 +14,12 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.flutter.hybrid.androidinterview.R;
+import com.flutter.hybrid.androidinterview.okhttp.OkhttpDemo;
 import com.flutter.hybrid.androidinterview.service.ServiceDemo;
 
 /**
@@ -37,6 +39,8 @@ import com.flutter.hybrid.androidinterview.service.ServiceDemo;
  *  singleInstance 独享一个任务栈，应用场景：呼叫来电
  */
 public class MainActivity extends AppCompatActivity implements FragmentDemo.IFragment {
+
+    private String TAG = "MainActivity";
 
     private ServiceDemo.MyBinder binder;
 
@@ -90,7 +94,11 @@ public class MainActivity extends AppCompatActivity implements FragmentDemo.IFra
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        uiHandler = new Handler();
+        button = findViewById(R.id.btn_helloworld);
         bindService(new Intent(this, ServiceDemo.class), serviceConnection, Context.BIND_AUTO_CREATE);
+        Log.i(TAG, "TESTuid:"+android.os.Process.myUid() + " tid:" + android.os.Process.myTid());
+        new OkhttpDemo().simple();
     }
 
     @Override
