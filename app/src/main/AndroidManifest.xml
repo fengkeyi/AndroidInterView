@@ -16,8 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".service.ServiceDemo"/>
+        <service android:name=".service.ServiceDemo">
+            <intent-filter>
+                <action android:name="com.aidl.service.demoservice"/>
+            </intent-filter>
+        </service>
         <service android:name=".service.IntentServiceDemo"/>
+        <receiver android:name=".brocast.LocalBrocastDemo"/>
     </application>
 
 </manifest>
