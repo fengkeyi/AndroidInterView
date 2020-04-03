@@ -6,6 +6,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.LruCache;
 
+import com.flutter.hybrid.androidinterview.retrofit.RetrofitDemo;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -14,7 +16,6 @@ import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.BiFunction;
@@ -24,15 +25,44 @@ import io.reactivex.observables.GroupedObservable;
 import rx.functions.Action0;
 import rx.schedulers.Schedulers;
 
+/***
+ * TODO 事件 观察者 被观察者 订阅
+ *  1、创建被观察者（Observable）&产生事件
+ *  2、创建观察者（Obserble）并订阅响应事件
+ *  3、通过订阅（Subscribe)连接观察者和被观察者
+ *
+ */
 public class RxjavaDemo {
+
+    private String TAG = "RxjavaDemo";
 
     private LruCache lruCache;
 
     BitmapFactory.Options options;
 
-    public void ints() {
+    public void init() {
         options.inJustDecodeBounds = true;
         options.inSampleSize = 10;
+    }
+
+    /**
+     * TODO
+     *  轮询网络请求 每隔1秒发送一次网络请求
+     */
+    public void internalRequest() {
+        Observable.interval(2,1,TimeUnit.SECONDS)
+                .subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        Log.i(TAG, "internalRequest............" + aLong);
+                        new RetrofitDemo().simple();
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                        Log.e(TAG, "internalRequest............" + throwable.toString());
+                    }
+                });
     }
 
 

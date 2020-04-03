@@ -20,6 +20,8 @@ import android.widget.Button;
 
 import com.flutter.hybrid.androidinterview.R;
 import com.flutter.hybrid.androidinterview.okhttp.OkhttpDemo;
+import com.flutter.hybrid.androidinterview.retrofit.RetrofitDemo;
+import com.flutter.hybrid.androidinterview.rxjava.RxjavaDemo;
 import com.flutter.hybrid.androidinterview.service.ServiceDemo;
 
 /**
@@ -97,8 +99,9 @@ public class MainActivity extends AppCompatActivity implements FragmentDemo.IFra
         uiHandler = new Handler();
         button = findViewById(R.id.btn_helloworld);
         bindService(new Intent(this, ServiceDemo.class), serviceConnection, Context.BIND_AUTO_CREATE);
-        Log.i(TAG, "TESTuid:"+android.os.Process.myUid() + " tid:" + android.os.Process.myTid());
-        new OkhttpDemo().simple();
+        Log.i(TAG, "THREADID ............."+android.os.Process.myTid()+" "+android.os.Process.myPid());
+//        new RetrofitDemo().simple();
+        new RxjavaDemo().internalRequest();
     }
 
     @Override
