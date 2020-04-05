@@ -3,10 +3,15 @@ package keyi.feng.changegrayskin.base;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import keyi.feng.changegrayskin.view.grayview.GrayFrameLayout;
@@ -15,7 +20,6 @@ import keyi.feng.changegrayskin.view.grayview.GrayFrameLayout;
  * https://mp.weixin.qq.com/s/8fTWLYaPhi0to47EUmFd7A
  */
 public class BaseActivity extends AppCompatActivity {
-
 
     @Override
     public View onCreateView(String name, Context context, AttributeSet attrs) {
@@ -40,6 +44,10 @@ public class BaseActivity extends AppCompatActivity {
                             Drawable c = getResources().getDrawable(a.resourceId);
                             grayFrameLayout.setBackground(c);
                         }
+                        //设置状态栏颜色
+                        Window window = getWindow();
+                        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                        window.setStatusBarColor(Color.GRAY);
                         return grayFrameLayout;
                     }
                 }
