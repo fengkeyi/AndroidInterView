@@ -4,7 +4,8 @@ import android.graphics.BitmapFactory;
 import android.os.Process;
 import android.text.TextUtils;
 import android.util.Log;
-import android.util.LruCache;
+
+import androidx.collection.LruCache;
 
 import com.flutter.hybrid.androidinterview.retrofit.RetrofitDemo;
 
@@ -31,11 +32,15 @@ import rx.schedulers.Schedulers;
  *  2、创建观察者（Obserble）并订阅响应事件
  *  3、通过订阅（Subscribe)连接观察者和被观察者
  *
+ *
+ *
  */
 public class RxjavaDemo {
 
     private String TAG = "RxjavaDemo";
 
+    //TODO
+    //LinkedHashMap队尾元素为最近最少使用
     private LruCache lruCache;
 
     BitmapFactory.Options options;
@@ -65,8 +70,14 @@ public class RxjavaDemo {
                 });
     }
 
-
-    public void simple(final String cache, final String disk, String network) {
+    /**
+     * TODO
+     * 缓存数据
+     * @param cache
+     * @param disk
+     * @param network
+     */
+    public void simpleCache(final String cache, final String disk, String network) {
         Observable<String> cacheObservable = Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> e) throws Exception {
