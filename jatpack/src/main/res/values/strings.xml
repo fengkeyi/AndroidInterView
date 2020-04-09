@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">System Detection</string>
+    <string name="home_page">HOME</string>
+    <string name="str_item_total_count">（total %s）</string>
+    <string name="str_error_count">Malfunction amount&#160;&#160; %d &#160;&#160;</string>
+    <string name="str_error_title_count">Fault item（%d item）</string>
+    <string name="str_normal_title_count">Normal item（%d items）</string>
+    <string name="str_i_know">Get it</string>
+
+
+</resources>

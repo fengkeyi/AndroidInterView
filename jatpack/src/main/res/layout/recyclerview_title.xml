@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:paddingStart="45dp"
+    android:background="#FF171717">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="故障项（3项）"
+        android:textColor="#FFFFFFFF"
+        android:textSize="20sp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="请及时联系优必选售后人员：400-6666-700"
+        android:textColor="#FF8C8C8C"
+        android:textSize="15sp"/>
+
+</LinearLayout>
+</layout>
