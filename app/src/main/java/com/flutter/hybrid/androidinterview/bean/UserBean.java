@@ -4,8 +4,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Parcelable，android特有，实现比较复杂，程序建传递数据使用Parcelable
- * Serializable 内存开销大，实现简单，序列化到存储设备使用
+ * TODO
+ *  Parcelable，android特有，实现比较复杂，程序建传递数据使用Parcelable
+ *  Serializable 内存开销大，实现简单，序列化到存储设备使用
+ *  总结：
+ *      1、Serializable是java的序列化方式，Parcelable是android特有的序列化方法
+ *      2、在使用内存的时候Parcelable比Serializable性能高
+ *      3、Serializable在序列化的时候会产生大量的临时变量，从而引起频繁的GC
+ *      4、Parcelable不能使用在将数据存储在磁盘上的情况
  */
 public class UserBean implements Parcelable {
 
