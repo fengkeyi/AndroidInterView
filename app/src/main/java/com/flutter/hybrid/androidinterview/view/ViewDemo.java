@@ -31,6 +31,15 @@ public class ViewDemo {
     private View view;
     private ViewGroup viewGroup;
     //缓存机制
+    /**
+     * TODO
+     *  item元素避免半透明（涉及大量乘法运算操作）
+     *  开启硬件加速
+     *  回收机制：
+     *  recyclerview-》LayoutManager.recycleChildren 回收
+     *  复用机制：
+     *  Recycler#getViewForPosition
+     */
     private RecyclerView recyclerView;
 
 

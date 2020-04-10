@@ -20,7 +20,7 @@ public class Util {
     public static String getDes(String key) {
         String language = Locale.getDefault().getLanguage();
         if (!Constant.DES_AIMBOT_CN.containsKey(key)) {
-            return "ERROR Description";
+            return key;
         }
         if (language.equals("zh")) {
             return Constant.DES_AIMBOT_CN.get(key);
