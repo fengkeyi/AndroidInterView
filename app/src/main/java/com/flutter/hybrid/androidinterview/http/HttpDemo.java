@@ -32,6 +32,7 @@ package com.flutter.hybrid.androidinterview.http;
  *      传输层  端口到端口的通讯
  *      应用层  规定应用程序的数据格式
  *    DNS  域名转换成IP地址（www.baidu.com-->10.20.35.221）
+ *     本地hosts文件--》本地DNS解析器缓存--》本地DNS服务器---》。。。--》13台跟服务器
  *
  *
  *
