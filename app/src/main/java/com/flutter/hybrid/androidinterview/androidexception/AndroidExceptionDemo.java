@@ -57,7 +57,7 @@ public class AndroidExceptionDemo {
      */
     public int test2() {
         try {
-            System.exit(0);
+            int a = 1 + 1;
             return 1;
         } catch (Exception e) {
             e.printStackTrace();

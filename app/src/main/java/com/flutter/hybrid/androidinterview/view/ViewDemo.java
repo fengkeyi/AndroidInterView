@@ -14,7 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
  *              TitleView：ActionBarContainer，ActionBar
  *              ContentView：FrameLayout->RelativeLayout(setContentView)
  *  步骤：
- *  1、measure：判断是否需要重新计算View的大小（确定宽和高，测量自上而下，起始点ViewRootImpl，也就是DecorView，View的子类通过重新onMeasure方法测量）
+ *  1、measure：判断是否需要重新计算View的大小（确定宽和高，测量自上而下，起始点ViewRootImpl，也就是DecorView，
+ *              View的子类通过重新onMeasure方法测量）
  *  2、layout：判读是否需要重新计算View的位置(确定view在父容器中的位置)
  *  3、draw：判断是否需要重新绘制View
  *      draw 步骤：
