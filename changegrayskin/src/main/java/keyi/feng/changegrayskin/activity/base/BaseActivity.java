@@ -1,17 +1,14 @@
-package keyi.feng.changegrayskin.base;
+package keyi.feng.changegrayskin.activity.base;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import keyi.feng.changegrayskin.view.grayview.GrayFrameLayout;
