@@ -1,3 +1,4 @@
 include ':app', ':changegrayskin'
 rootProject.name='AndroidInterView'
 include ':jatpack'
+include ':democode'
